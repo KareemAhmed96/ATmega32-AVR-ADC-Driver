@@ -1,10 +1,7 @@
 
 
 /*
- * The address of the union will be passed to this function,
- * after defining the configurations of it's members
- *//*
- * ADC.c
+ *  ADC.c
  *
  *  Created on: Apr 20, 2019
  *      Author: Kareem
@@ -28,11 +25,6 @@ void ADC_init(const ADC_Config_Type *ADC_Config_Ptr){
 	SFIOR  = (SFIOR & 0x1F)  | ((ADC_Config_Ptr -> trigSource) << ADTS0); //Auto Trigger Source
 
 #if (INTERRUPT_EN == ON)
-	
-	/*
- * The address of the union will be passed to this function,
- * after defining the configurations of it's members
- */
 
 	SET_BIT(ADCSRA, ADIE); //Interrupt Enable
 
