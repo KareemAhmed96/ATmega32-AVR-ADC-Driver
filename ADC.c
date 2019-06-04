@@ -16,6 +16,9 @@ volatile uint16 g_result;
 
 void ADC_init(const ADC_Config_Type *ADC_Config_Ptr){
 
+	/* Masking the ADC Control Registers in order to configure them independently based on the
+	   Configuration structure passed to the initialization function by address */
+	
 	ADMUX = (ADMUX & 0x3F) | ((ADC_Config_Ptr -> voltageRef) << REFS0); //Two Bits for Voltage Reference
 	ADMUX = (ADMUX & 0xDF) | ((ADC_Config_Ptr -> resAdjust)  << ADLAR); //Left or Right Adjustment
 
