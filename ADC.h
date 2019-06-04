@@ -15,9 +15,9 @@
 #define ON                   1
 #define OFF                  0
 
-#define ADC_ENABLE		 	 1
-#define ADC_AUTO_TRIG_EN	 1
-#define INTERRUPT_EN  		 ON
+#define ADC_ENABLE	     1
+#define ADC_AUTO_TRIG_EN     1
+#define INTERRUPT_EN  	     ON
 
 extern volatile uint16 g_result;
 
@@ -91,13 +91,13 @@ typedef struct {
 
 /*****************************************************************
  *           Analog Channel and Gain Selection Bits              *
- * 			----------------------------------------		     *
+ * 	     --------------------------------------              *
  * They are split into three enumerations, one for each set of   *
- * configurations. 												 *
- * From channel 1 to channel 7: Single Ended Input 		  	 	 *
+ * configurations.                                               *
+ * From channel 1 to channel 7: Single Ended Input 		 *
  * From option 8 to option 15:  Double Ended Input with gain     *
  * From option 16 to option 32: Double Ended Input without gain  *
- * 																 *
+ * 								 *
  *****************************************************************/
 
 // First enumeration (3-bits are needed)
@@ -160,12 +160,12 @@ typedef union {
  *                      Function Prototypes                     *
  ****************************************************************/
 
-/*	1- ADC_init()
- *     Initializes the ADC Module
+/* 1- ADC_init()
+ *    Initializes the ADC Module
  *
- * 	   It's input parameter is a pointer to constant structure (Configuration Structure)
+ *    It's input parameter is a pointer to constant structure (Configuration Structure)
  *
- * 	   Also choosing interrupts or polling is implemented inside this function
+ *    Also choosing interrupts or polling is implemented inside this function
  */
 void ADC_init(const ADC_Config_Type *ADC_Config_Ptr);
 /*
