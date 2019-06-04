@@ -1,4 +1,9 @@
+
+
 /*
+ * The address of the union will be passed to this function,
+ * after defining the configurations of it's members
+ *//*
  * ADC.c
  *
  *  Created on: Apr 20, 2019
@@ -20,6 +25,11 @@ void ADC_init(const ADC_Config_Type *ADC_Config_Ptr){
 	SFIOR  = (SFIOR & 0x1F)  | ((ADC_Config_Ptr -> trigSource) << ADTS0); //Auto Trigger Source
 
 #if (INTERRUPT_EN == ON)
+	
+	/*
+ * The address of the union will be passed to this function,
+ * after defining the configurations of it's members
+ */
 
 	SET_BIT(ADCSRA, ADIE); //Interrupt Enable
 
@@ -35,10 +45,7 @@ void ADC_init(const ADC_Config_Type *ADC_Config_Ptr){
 	ADCSRA |= (ADC_ENABLE<<ADEN); //ADC Enable
 }
 
-/*
- * The address of the union will be passed to this function,
- * after defining the configurations of it's members
- */
+
 #if (INTERRUPT_EN == ON)
 
 
@@ -47,6 +54,11 @@ ISR(ADC_vect){
 	g_result = ADC;
 	SET_BIT(ADCSRA, ADIF); //Clearing the Interrupt flag
 }
+
+/*
+ * The address of the union will be passed to this function,
+ * after defining the configurations of it's members
+ */
 
 void ADC_readChannel_Interrupts(const ADC_Analog_Channel_Type *Channel_Ptr){
 
