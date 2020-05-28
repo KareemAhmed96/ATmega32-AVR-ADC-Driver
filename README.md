@@ -39,16 +39,16 @@ The selectioin is implemented by choosing from the following enumerations as inp
 The structure which will be passed by address to the initialization function is called "ADC_Config_Type".
 
 **************************************************************************************************************
-***** EXAMPLE: ADC_Config_Type Config_Ptr = {AVCC, RIGHT_ADJUST, DIV_BY_8, EXTENAL_INTERRUPT_REQUEST_0}; *****
-************** ADC_init(&Config_Ptr); ************************************************************************
+EXAMPLE: ADC_Config_Type Config_Ptr = {AVCC, RIGHT_ADJUST, DIV_BY_8, EXTENAL_INTERRUPT_REQUEST_0};
+ADC_init(&Config_Ptr);
 **************************************************************************************************************
 
 
 The union "ADC_Analog_Channel_Type" will also be passed by address, but to another function (ADC_readChannel_Polling/ADC_readChannel_Interrupts)
 
 *************************************************************************
-***** EXAMPLE: ADC_Analog_Channel_Type Channel_Config_Ptr = {ADC1}; *****
-************** ADC_readChannel_Interrupts(&Channel_Config_Ptr); *********
+EXAMPLE: ADC_Analog_Channel_Type Channel_Config_Ptr = {ADC1};
+ADC_readChannel_Interrupts(&Channel_Config_Ptr);
 *************************************************************************
 
 
