@@ -1,14 +1,14 @@
 # ATmega32-AVR-ADC-Driver
 Highly Configurable Software Driver
 
-This driver allows for easy use of the ADC Module (10-bits resolution) in the Atmel AVR ATmega32 Microcontroller.
+This driver allows you to easily use the ADC Module (10-bits resolution) for **Analog** to **Digital** conversions in the Atmel AVR ATmega32 Microcontroller.
 
 The initialization function of the ADC Software Driver takes input parameters as configurations for the ADC Module.
 
 These configuration are as follows:-
 ------------------------------------
 
-The selectioin is implemented by choosing from the following enumerations as input paramaters to the initiallization function.
+The selection is implemented by choosing from the following enumerations as input paramaters to the initiallization function.
  
  -> ADC_Voltage_Reference: 
     AREF_PIN, AVCC, RESERVERED, INTERNAL_VOLTAGE.
